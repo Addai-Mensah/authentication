@@ -8,10 +8,11 @@ const express = require("express");
 const router = express.Router();
 
 
- router.get("/me", auth, async (req,res) => {
-    const user = Login.findById(req.user._id.select("-password"))
-    res.send(user)
- })
+//  router.get("/me", auth, async (req,res) => {
+//     const user = Login.findById(req.user._id.select("-password"))
+//     res.send(user)
+//  })
+
 
 router.post("/", async(req,res) =>{
 

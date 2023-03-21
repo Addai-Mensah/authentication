@@ -1,9 +1,9 @@
 const Joi = require("joi");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const register = new mongoose.Schema({
-   
 
+
+const register = new mongoose.Schema({
     email:{
         type:String,
         minlength:5,
@@ -11,7 +11,6 @@ const register = new mongoose.Schema({
         required:true,
         unique:true
     },
-
 
     password:{
         type: String,

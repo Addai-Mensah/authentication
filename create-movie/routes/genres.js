@@ -5,14 +5,15 @@ const express = require('express');
 const router = express.Router();
 
 
-    router.get("/", async (req,res) =>{
+   
+
+
+    router.get("/", (async (req,res,next) =>{
 
         const genre = await Genre.find()
         .sort("name");
-
-        if (!genre) return res.status(400).send("Genre list cannot display at the moment, please try again later!");
-        return  res.send(genre);
-    })
+        
+    }));
 
 
     router.post("/", auth, async (req,res) => {
@@ -27,8 +28,6 @@ const router = express.Router();
         console.log(genre)
     
     });
-
-
 
     router.put("/:id", async (req,res) => {
         const {error} = validate(req.body);
