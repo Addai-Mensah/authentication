@@ -24,11 +24,11 @@ const router = express.Router();
         const {error} = validate(req.body); 
         if (error) return res.status(400).send(error.details[0].message);
       
-         let genres = new Genre({name: req.body.name });
+         let genre = new Genre({name: req.body.name });
          genre = await genre.save();
 
-        res.send(genres);
-        console.log(genres)
+        res.send(genre);
+        console.log(genre)
     
     });
 
