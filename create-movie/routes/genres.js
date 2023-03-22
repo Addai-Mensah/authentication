@@ -16,16 +16,19 @@ const router = express.Router();
     }));
 
 
+
+
+    // create post
     router.post("/", auth, async (req,res) => {
 
         const {error} = validate(req.body); 
         if (error) return res.status(400).send(error.details[0].message);
       
-         let genre = new Genre({name: req.body.name });
+         let genres = new Genre({name: req.body.name });
          genre = await genre.save();
 
-        res.send(genre);
-        console.log(genre)
+        res.send(genres);
+        console.log(genres)
     
     });
 
